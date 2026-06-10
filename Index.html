@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitaarlespraktijk Van Keeken - Homepage</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Plaats logo links van de tekst en centreer verticaal */
+        .nav-container .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* afstand tussen logo en tekst */
+            text-decoration: none;
+        }
+        .nav-container .logo-area .logo-img {
+            width: 56px; /* pas grootte naar wens aan */
+            height: auto;
+            display: block;
+        }
+        /* Optionele kleinere aanpassing voor de sitetitel */
+        .nav-container .logo-area .site-title {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+
+        /* Nieuwe styles: oranje vak als afbeelding-container */
+        .icon-container-orange {
+            width: 72px;            /* vierkant vak */
+            height: 72px;
+            background: #e58226;   /* oranje kleur */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05) inset;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .icon-container-orange img {
+            width: 56px;           /* afbeeldinggrootte binnen het vak */
+            height: 56px;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;    /* optioneel: afgeronde afbeelding binnen het vak */
+            transition: transform 0.3s ease;
+        }
+        .benefit-item:hover .icon-container-orange img {
+            transform: translateY(-8px);
+        }
+
+
+        /* Als je geen afbeelding hebt, verberg lege img-tags netjes */
+        .icon-container-orange img[alt=""] {
+            display: none;
+        }
+
+
+        /* Zorg dat navigatielinks met een hoofdletter beginnen (werkt per pagina) */
+        .nav-links a {
+            text-transform: capitalize;
+        }
+
+
+        .benefit-item a {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 24px;
+            border-radius: 28px;
+            color: inherit;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+
+        .benefit-item a:hover {
+            background: rgba(230, 126, 34, 0.08);
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-area active">
+                <img src="afbeeldingen/logo.png" alt="Logo Gitaarlespraktijk Van Keeken" class="logo-img">
+                <span class="site-title">Gitaarlespraktijk Van Keeken</span>
+            </a>
+           
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="lessen.html">Lessen</a>
+                    <a href="contact.html">contact</a>
+                    <a href="over-mij.html">over mij</a>
+                    <a href="prijzen.html">Prijzen</a>
+                </nav>
+                <div class="header-action">
+                    <a href="proefles.html" class="header-button">Boek proefles</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main>
+        <section class="hero-image-container">
+            <img src="afbeeldingen/_1200x630_crop_center-center_82_none_nsakoestische-gitaar.jpg" alt="Willem van Keeken geeft gitaarles" class="hero-main-img">
+        </section>
+
+
+
+
+        <section class="welcome-section">
+            <div class="welcome-card-blue">
+                <h1>Welkom bij Gitaarlespraktijk Van Keeken</h1>
+                <p class="welcome-subtitle">Leer gitaar spelen in een ontspannen en professionele omgeving</p>
+                <div class="center-button">
+                    <a href="prijzen.html" class="btn-orange-action">Boek een Proefles</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="why-us-section">
+            <h2>Waarom Van Keeken?</h2>
+           
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <a href="lessen.html">
+                        <div class="icon-container-orange">
+                            <img src="afbeeldingen/gitaar.png" alt="Professionele begeleiding">
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Professionele Begeleiding</h3>
+                            <p>Ervaren docent met jarenlange ervaring</p>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+                <div class="benefit-item">
+                    <a href="lessen.html">
+                        <div class="icon-container-orange">
+                            <img src="afbeeldingen/muziek.png" alt="Individuele aanpak">
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Individuele aanpak</h3>
+                            <p>Lessen volledig afgestemd op jouw tempo en niveau</p>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+                <div class="benefit-item">
+                    <a href="lessen.html">
+                        <div class="icon-container-orange">
+                            <img src="afbeeldingen/klok3.0'.png" alt="Flexibele lessen">
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Flexibele lessen</h3>
+                            <p>Individueel of in groepsverband</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('.nav-links');
+
+
+
+
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    </script>
+
+
+
+
+</body>
+</html>
+
+

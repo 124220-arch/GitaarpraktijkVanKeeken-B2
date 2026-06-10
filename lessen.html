@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ons Lesaanbod - Gitaarlespraktijk Van Keeken</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Zet eerste letter van elk woord in navigatie en sitetitel met hoofdletter */
+        .nav-links a,
+        .nav-container .site-title {
+            text-transform: capitalize;
+        }
+
+
+        /* Full-bleed hero image vak */
+        .hero-image-box {
+            position: relative;
+            width: 100vw;
+            /* center full-bleed container in viewport (works inside centered layouts) */
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            overflow: hidden;
+            background: #f3f3f3;
+            box-shadow: none;
+            border-radius: 0; /* geen afgeronde hoeken voor full-bleed */
+            height: 420px; /* desktop hoogte - pas aan naar wens */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* afbeelding vult vak en wordt bijgesneden */
+            display: block;
+            max-width: none;
+        }
+
+
+        /* mobiele hoogte aanpassen */
+        @media (max-width: 900px) {
+            .hero-image-box {
+                height: 300px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-image-box {
+                height: 220px;
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo-area">
+                <a href="index.html" class="site-title">Gitaarlespraktijk Van Keeken</a>
+            </div>
+           
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="lessen.html" class="active">Lessen</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="over-mij.html">Over mij</a></li>
+                    <li><a href="prijzen.html">Prijzen</a></li>
+                </ul>
+                <div class="header-action">
+                    <a href="proefles.html" class="header-button">Boek proefles</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <section class="hero-image-box">
+            <img src="afbeeldingen/metvrouw.png" alt="Gitaarles impressie" class="hero-main-img">
+        </section>
+
+
+
+
+        <div class="container lessons-container">
+            <h2 class="section-title">Ons Lesaanbod</h2>
+
+
+
+
+            <div class="lessons-grid" id="lesson-slider">
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L18 9l3 3-9 9-3-3z" />
+                            <path d="m14 13 3-3M11 16l3-3M8 19l3-3M17 10l2.5-2.5a2.12 2.12 0 0 0-3-3L14 7" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Individuele lessen</h3>
+                        <p>Persoonlijke begeleiding afgestemd op jouw niveau en wensen.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>30 of 60 minuten</li>
+                            <li>Eigen tempo</li>
+                            <li>Flexibel instelbaar</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18V5l12-2v13" />
+                            <circle cx="6" cy="18" r="3" />
+                            <circle cx="18" cy="16" r="3" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Groepslessen</h3>
+                        <p>Samen gitaar leren in een gezellige en leerzame setting.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Les in kleine groepen</li>
+                            <li>Samen spelen en van elkaar leren</li>
+                            <li>Geschikt voor beginners</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3v18M3 12h18" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Online Lessen</h3>
+                        <p>Leer gitaar waar en wanneer het jou uitkomt.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Live lessen via video</li>
+                            <li>Geen reistijd nodig</li>
+                            <li>Opname beschikbaar</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Kinderlessen</h3>
+                        <p>Speelse en motiverende gitaarlessen voor jonge muzikanten.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Aangepast lesmateriaal</li>
+                            <li>Leren door plezier</li>
+                            <li>Geschikt vanaf 6 jaar</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Gevorderde Lessen</h3>
+                        <p>Breng je techniek en muzikaliteit naar een hoger niveau.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Solo's en improvisatie</li>
+                            <li>Geavanceerde technieken</li>
+                            <li>Persoonlijke feedback</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 6h16M7 6v12M17 6v12" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Akoestische Gitaar</h3>
+                        <p>Ontwikkel een sterke basis op akoestische gitaar.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Akkoorden en ritmes</li>
+                            <li>Fingerpicking technieken</li>
+                            <li>Pop, folk en meer</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 3h12l-1 7H7L6 3z" />
+                            <path d="M6 10v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6" />
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Elektrische Gitaar</h3>
+                        <p>Leer krachtige riffs, solo's en moderne speeltechnieken.</p>
+                       
+                        <ul class="bullet-list">
+                            <li>Rock en metal technieken</li>
+                            <li>Effecten en versterkers</li>
+                            <li>Improvisatie en solo's</li>
+                        </ul>
+                        <a href="prijzen.html" class="btn-orange-action">Bekijk Prijzen</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script>
+        // Mobiel Menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+
+
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+

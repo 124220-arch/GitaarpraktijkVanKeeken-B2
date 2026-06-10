@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Mij - Gitaarlespraktijk Van Keeken</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .nav-links a,
+        .nav-container .site-title {
+            text-transform: capitalize;
+        }
+
+
+        /* Even hoge 'about' vakken - hoogte volgt nu de inhoud */
+        .about-block {
+            display: flex;
+            gap: 28px;
+            align-items: stretch;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            /* min-height verwijderd zodat blokhoogte door inhoud wordt bepaald */
+        }
+        .about-text,
+        .about-img-frame {
+            flex: 1 1 50%;
+            min-width: 0;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        /* Afbeelding-kolom: centreer en laat afbeelding proportioneel meeschalen, maar beperk maximale hoogte */
+        .about-img-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .about-img-frame img {
+            /* voorkom dat de afbeelding de blokhoogte vergroot */
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            max-height: 320px; /* pas naar wens: zorgt dat afbeelding kleiner wordt zonder blok te vergroten */
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* Responsive: op small screens neemt afbeelding volledige breedte en hoogte volgt tekst */
+        @media (max-width: 800px) {
+            .about-block {
+                flex-direction: column;
+            }
+            .about-img-frame img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html" class="site-title">Gitaarlespraktijk Van Keeken</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="lessen.html">Lessen</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="over-mij.html" class="active">Over mij</a>
+                    <a href="prijzen.html">Prijzen</a>
+                </nav>
+                <div class="header-action">
+                    <a href="proefles.html" class="header-button">Boek proefles</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section class="container">
+       
+        <div class="about-block">
+            <div class="about-text">
+                <h2>Wie ben ik?</h2>
+                <p>Ik ben Willem van Keeken, een ervaren gitaarleraar met mijn eigen muziekschool. Ik geef duidelijke en leuke lessen voor zowel beginners als gevorderden en pas mijn lessen aan op het niveau van de leerling.</p>
+            </div>
+            <div class="about-img-frame">
+                <img src="afbeeldingen/pretpaket.png" alt="Willem van Keeken">
+            </div>
+        </div>
+
+
+
+
+        <div style="margin: 40px 0; border-radius: var(--border-radius); overflow: hidden; background-color: var(--primary-dark); padding: 15px;">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&h=400&q=80" alt="Gitaarles Sfeerimpressie" style="width:100%; display:block; border-radius: calc(var(--border-radius) - 10px); object-fit: cover; max-height: 350px;">
+        </div>
+
+
+
+
+        <div class="about-block" style="margin-top: 60px;">
+            <div class="about-img-frame">
+                <img src="afbeeldingen/metkind.png" alt="Artistieke Muziek Impressie">
+            </div>
+            <div class="about-text">
+                <h2>Waar ben ik te vinden?</h2>
+                <p style="font-weight: 700; margin-bottom: 5px; font-family: var(--font-headings);">locatie:</p>
+                <p>De oude wereld 63 Alphen aan den Rijn</p>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+
+
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+
+

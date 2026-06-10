@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijzen - Gitaarlespraktijk Van Keeken</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Nieuwe regels: centreren van de prijzen-kaarten en controls op deze pagina */
+        .prijzen-page .section-title {
+            text-align: center;
+        }
+        .prijzen-page .proefles-card {
+            display: flex;
+            justify-content: center;
+            width: min(100%, 860px);
+            margin: 0 auto 40px;
+            padding: 32px 24px;
+            background: var(--primary-dark);
+            border-radius: 30px;
+            box-shadow: var(--shadow-hover);
+        }
+        .prijzen-page .proefles-card .btn-orange-action {
+            margin: 0;
+        }
+        .prijzen-page .prijzen-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centreert de slider en controls */
+            gap: 24px;
+            width: 100%;
+        }
+
+
+        .prijzen-page .prijzen-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(260px, 320px));
+            gap: 24px;
+            margin: 24px auto 0;
+            justify-content: center;
+            align-items: stretch;
+            width: max-content;
+        }
+
+
+        .prijzen-page .prijzen-grid .card {
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: var(--shadow-hover);
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+        }
+
+
+        .prijzen-page .prijzen-grid .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+
+        .prijzen-page .card-header-visual {
+            height: 90px;
+            padding: 14px 16px;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+
+        .prijzen-page .card-header-visual svg {
+            display: none;
+        }
+
+
+        .prijzen-page .prijzen-grid .card-body .bullet-list {
+            margin: 0 0 22px;
+            padding-left: 18px;
+            text-align: left;
+            width: 100%;
+        }
+
+
+        .prijzen-page .prijzen-btn {
+            margin-top: auto;
+        }
+        /* prijs-knop: gecentreerd, vaste maximale breedte en duidelijke styling */
+        .prijzen-page .prijzen-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: #e67e22;
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 28px;
+            width: 260px;
+            max-width: 90%;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-top: 12px;
+        }
+        .prijzen-page .prijzen-btn span {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+        .prijzen-page .prijzen-btn strong {
+            font-size: 1.5rem;
+            margin-top: 6px;
+        }
+
+
+        /* kleine responsive aanpassing */
+        @media (max-width: 480px) {
+            .prijzen-page .prijzen-slider {
+                max-width: 320px;
+            }
+            .prijzen-page .prijzen-btn {
+                width: 220px;
+            }
+        }
+
+
+        /* Zorg dat pijltjes en dots niet buiten zicht staan op kleine schermen */
+        .prijzen-page .slider-controls .arrow-btn {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+
+        /* nieuwe regels: centreer kaart-inhoud en plaats knop onderaan gecentreerd */
+        .prijzen-page .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centreert titel en omschrijving */
+            text-align: center;
+        }
+
+
+        /* pijltjes en dots onder de slider blijven gecentreerd */
+        .prijzen-page .slider-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 8px;
+            position: relative;
+            z-index: 10; /* blijft boven pagina-elementen, maar slider heeft nu voldoende hoogte */
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html" class="site-title">Gitaarlespraktijk Van Keeken</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="lessen.html">Lessen</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="over-mij.html">Over mij</a>
+                    <a href="prijzen.html" class="active">Prijzen</a>
+                </nav>
+                <div class="header-action">
+                    <a href="proefles.html" class="header-button">Boek proefles</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section class="container prijzen-page">
+        <div class="proefles-card">
+            <a href="proefles.html" class="btn-orange-action">Boek een Proefles</a>
+        </div>
+        <h2 class="section-title">Prijzen</h2>
+
+
+
+
+        <div class="prijzen-grid">
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18L18 9l3 3-9 9-3-3z" />
+                        <path d="m14 13 3-3M11 16l3-3M8 19l3-3M17 10l2.5-2.5a2.12 2.12 0 0 0-3-3L14 7" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Individuele lessen</h3>
+                    <p>Persoonlijke begeleiding afgestemd op jouw niveau en wensen.</p>
+                    <ul class="bullet-list">
+                        <li>60 minuten</li>
+                        <li>Eigen tempo</li>
+                        <li>Flexibel instelbaar</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>125€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18V5l12-2v13" />
+                        <circle cx="6" cy="18" r="3" />
+                        <circle cx="18" cy="16" r="3" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Groepslessen</h3>
+                    <p>Samen gitaar leren in een gezellige en leerzame setting.</p>
+                    <ul class="bullet-list">
+                        <li>Les in kleine groepen</li>
+                        <li>Samen spelen en van elkaar leren</li>
+                        <li>Geschikt voor beginners</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>85€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3v18M3 12h18" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Online Lessen</h3>
+                    <p>Leer gitaar waar en wanneer het jou uitkomt.</p>
+                    <ul class="bullet-list">
+                        <li>Live lessen via video</li>
+                        <li>Geen reistijd nodig</li>
+                        <li>Opname beschikbaar</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>95€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Kinderlessen</h3>
+                    <p>Speelse en motiverende gitaarlessen voor jonge muzikanten.</p>
+                    <ul class="bullet-list">
+                        <li>Aangepast lesmateriaal</li>
+                        <li>Leren door plezier</li>
+                        <li>Geschikt vanaf 6 jaar</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>75€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Gevorderde Lessen</h3>
+                    <p>Breng je techniek en muzikaliteit naar een hoger niveau.</p>
+                    <ul class="bullet-list">
+                        <li>Solo's en improvisatie</li>
+                        <li>Geavanceerde technieken</li>
+                        <li>Persoonlijke feedback</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>110€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M7 6v12M17 6v12" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Akoestische Gitaar</h3>
+                    <p>Ontwikkel een sterke basis op akoestische gitaar.</p>
+                    <ul class="bullet-list">
+                        <li>Akkoorden en ritmes</li>
+                        <li>Fingerpicking technieken</li>
+                        <li>Pop, folk en meer</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>90€</strong>
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="card prijzen-card">
+                <div class="card-header-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 3h12l-1 7H7L6 3z" />
+                        <path d="M6 10v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6" />
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Elektrische Gitaar</h3>
+                    <p>Leer krachtige riffs, solo's en moderne speeltechnieken.</p>
+                    <ul class="bullet-list">
+                        <li>Rock en metal technieken</li>
+                        <li>Effecten en versterkers</li>
+                        <li>Improvisatie en solo's</li>
+                    </ul>
+                    <a href="contact.html" class="prijzen-btn">
+                        <span>Vanaf</span>
+                        <strong>100€</strong>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+
+
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>

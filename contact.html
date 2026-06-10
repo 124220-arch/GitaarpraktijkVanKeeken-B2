@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Proefles - Gitaarlespraktijk Van Keeken</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .nav-links a,
+        .nav-container .site-title {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html" class="site-title">Gitaarlespraktijk Van Keeken</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="lessen.html">Lessen</a>
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="over-mij.html">Over mij</a>
+                    <a href="prijzen.html">Prijzen</a>
+                </nav>
+                <div class="header-action">
+                    <a href="proefles.html" class="header-button">Boek proefles</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section class="hero-image-box contact-hero">
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&h=450&q=80" alt="Sfeerimpressie muziekruimte" class="hero-main-img">
+        </div>
+    </section>
+
+
+
+
+    <section class="container contact-section">
+        <div class="contact-layout">
+            <div class="info-card-wrapper">
+                <div class="info-content">
+                    <h2>Contact gegevens</h2>
+                    <p>De oude wereld 63</p>
+                    <p>Alphen aan den Rijn</p>
+                    <p class="contact-email">Email: <a href="mailto:GitaarlespraktijkVanKeeken.nl">GitaarlespraktijkVanKeeken.nl</a></p>
+                </div>
+                <svg class="guitar-neck-decor" viewBox="0 0 100 300" fill="none">
+                    <rect x="35" y="0" width="30" height="300" fill="#2C3E50"/>
+                    <line x1="35" y1="40" x2="65" y2="40" stroke="#FFF" stroke-width="2"/>
+                    <line x1="35" y1="90" x2="65" y2="90" stroke="#FFF" stroke-width="2"/>
+                    <line x1="35" y1="150" x2="65" y2="150" stroke="#FFF" stroke-width="2"/>
+                    <line x1="35" y1="220" x2="65" y2="220" stroke="#FFF" stroke-width="2"/>
+                    <path d="M25 0 C 25 -20, 75 -20, 75 0 Z" fill="#E67E22"/>
+                    <circle cx="20" cy="20" r="6" fill="#BDC3C7"/>
+                    <circle cx="20" cy="50" r="6" fill="#BDC3C7"/>
+                    <circle cx="80" cy="20" r="6" fill="#BDC3C7"/>
+                    <circle cx="80" cy="50" r="6" fill="#BDC3C7"/>
+                </svg>
+            </div>
+
+
+
+
+            <div class="form-card">
+                <h2>Stel je vraag</h2>
+                <form action="#" method="POST">
+                    <div class="form-grid">
+                        <div class="form-left">
+                            <div class="form-group">
+                                <input type="text" name="onderwerp" placeholder="Onderwerp" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="naam" placeholder="Naam" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contact" placeholder="Email of Telefoonnummer" required>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-right">
+                            <div class="form-group textarea-group">
+                                <textarea name="bericht" placeholder="Vraag of opmerking" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-full">Verstuur je bericht</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+
+
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+
+
